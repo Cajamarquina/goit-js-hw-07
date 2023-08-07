@@ -9,8 +9,8 @@ function renderGallery() {
     <li class="gallery__item">
       <a class="gallery__link" href="${item.original}">
         <img
+          class="gallery__image"
           src="${item.preview}"
-          data-source="${item.original}"
           alt="${item.description}"
         />
       </a>
@@ -20,10 +20,10 @@ function renderGallery() {
   galleryList.innerHTML = galleryMarkup;
 }
 
+renderGallery();
+
 // Initialize SimpleLightbox after the gallery is created
 const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  
-console.log(galleryItems);
+  captionsData: 'alt',
+  captionDelay: 250,
+});
